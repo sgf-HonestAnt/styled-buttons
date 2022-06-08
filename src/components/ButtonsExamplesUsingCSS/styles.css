@@ -1,0 +1,65 @@
+/* root colors as hsl */
+:root {
+    --blue-green-color-wheel: 166, 97%, 14%;
+    --castleton-green: 164, 93%, 17%;
+    --caribbean-green: 158, 60%, 48%;
+    --honeydew: 154, 61%, 92%;
+}
+
+/* Bootstrap buttons & badges */
+button,
+.btn {
+    border-radius: 0 !important;
+}
+
+.button:hover,
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-info {
+    border-radius: 0;
+    border: none !important;
+    font-weight: 600 !important;
+}
+
+.btn-light {
+    background-color: hsla(var(--honeydew), 1) !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+
+.btn.btn-light:hover {
+    box-shadow: hsla(var(--honeydew), 0.5) 0px 1px 2px 0px !important;
+}
+
+.btn-primary {
+    background-color: hsla(var(--castleton-green), 1) !important;
+    border: none !important;
+    font-weight: 600 !important;
+    /* box-shadow: rgba(var(--castleton-green)) 0px 1px 2px 0px !important; */
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    opacity: 0.5 !important;
+}
+
+.btn-primary:hover {
+    background-color: hsla(var(--blue-green-color-wheel), 1) !important;
+    transform: scale(1.02);
+    z-index: 9;
+}
+
+.btn-secondary {
+    background-color: hsla(var(--caribbean-green), 0.5) !important;
+    color: hsla(var(--castleton-green), 1) !important;
+    border: none !important;
+    font-weight: 600 !important;
+    /* box-shadow: rgba(var(--caribbean-green)) 0px 1px 2px 0px !important; */
+}
+
+.btn-secondary:hover {
+    background-color: hsla(var(--caribbean-green), 0.7) !important;
+    transform: scale(1.02);
+}
