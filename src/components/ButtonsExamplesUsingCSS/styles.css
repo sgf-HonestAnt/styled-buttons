@@ -1,65 +1,147 @@
 /* root colors as hsl */
 :root {
-    --blue-green-color-wheel: 166, 97%, 14%;
-    --castleton-green: 164, 93%, 17%;
-    --caribbean-green: 158, 60%, 48%;
-    --honeydew: 154, 61%, 92%;
+    --primary-h: 211;
+    --primary-s: 100%;
+    --primary-l: 50%;
+    --primary: hsl((--primary-h), (--primary-s), (--primary-l));
+
+
+    --pending: 69, 240, 223;
+    --pendingAs: 69 240 223;
+    --outlinePending: 91, 240, 225;
+    --outlinePendingAs: 91 240 225;
+    --in_progress: 194, 202, 232;
+    --completed: 131, 128, 182;
+    --cancelled: rgb(17, 29, 74);
+    --hover-brightness: 0.85;
+    --border-hover-brightness: 0.80;
+    --border-active-brightness: 0.75;
 }
 
-/* Bootstrap buttons & badges */
-button,
-.btn {
-    border-radius: 0 !important;
-}
-
-.button:hover,
-.btn:hover {
-    transform: scale(1.05);
-}
-
-.btn-info {
-    border-radius: 0;
-    border: none !important;
-    font-weight: 600 !important;
-}
-
-.btn-light {
-    background-color: hsla(var(--honeydew), 1) !important;
-    border: none !important;
-    font-weight: 600 !important;
-}
-
-.btn.btn-light:hover {
-    box-shadow: hsla(var(--honeydew), 0.5) 0px 1px 2px 0px !important;
-}
+/* Example Bootstrap button styles */
 
 .btn-primary {
-    background-color: hsla(var(--castleton-green), 1) !important;
-    border: none !important;
-    font-weight: 600 !important;
-    /* box-shadow: rgba(var(--castleton-green)) 0px 1px 2px 0px !important; */
-}
-
-.btn-primary.disabled,
-.btn-primary:disabled {
-    opacity: 0.5 !important;
+    border-color: var(--primary);
+    background-color: var(--primary);
 }
 
 .btn-primary:hover {
-    background-color: hsla(var(--blue-green-color-wheel), 1) !important;
-    transform: scale(1.02);
-    z-index: 9;
+    background-color: hsla((--primary-h), (--primary-s), (--primary-l), 0.93) !important;
+    border-color: hsla((--primary-h), (--primary-s), (--primary-l), 0.89) !important;
 }
 
-.btn-secondary {
-    background-color: hsla(var(--caribbean-green), 0.5) !important;
-    color: hsla(var(--castleton-green), 1) !important;
-    border: none !important;
-    font-weight: 600 !important;
-    /* box-shadow: rgba(var(--caribbean-green)) 0px 1px 2px 0px !important; */
-}
+/* @function convert-color($hex, $fr) {
+    @return rgba(red($hex), green($hex), blue($hex), $fr);
+  }
+  
+  @function text-color($color) {
+    @if (lightness($color) > 50) {
+      @return #000;
+    } @else {
+      @return #fff;
+    }
+  }
+  
+  @mixin common-mixin($color) {
+    border-color: $color;
+    &:hover {
+      background-color: darken($color, 7%);
+      border-color: darken($color, 11%);
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.25rem transparentize($color, 0.5);
+    }
+    &:not(:disabled, .disabled) {
+      &:active,
+      &.active {
+        background-color: darken($color, 7%);
+        border-color: darken($color, 11%);
+      }
+    }
+  }
+  
+  @mixin btn-mixin($color) {
+    @include common-mixin($color);
+    background-color: $color;
+    color: text-color($color);
+  }
+  
+  @mixin outline-mixin($color) {
+    @include common-mixin($color);
+    background-color: convert-color($color, 0);
+    color: $color;
+    &:hover {
+      color: text-color($color);
+    }
+    &:not(:disabled, .disabled) {
+      &:active,
+      &.active {
+        color: text-color($color);
+      }
+    }
+  } */
 
-.btn-secondary:hover {
-    background-color: hsla(var(--caribbean-green), 0.7) !important;
-    transform: scale(1.02);
-}
+/* @import "_variables";
+@import "_mixins";
+
+.btn {
+    &.btn- {
+        &red {
+            @include btn-mixin($red);
+        }
+
+        &yellow {
+            @include btn-mixin($yellow);
+        }
+
+        &pink {
+            @include btn-mixin($pink);
+        }
+
+        &green {
+            @include btn-mixin($green);
+        }
+
+        &orange {
+            @include btn-mixin($orange);
+        }
+
+        &purple {
+            @include btn-mixin($purple);
+        }
+
+        &blue {
+            @include btn-mixin($blue);
+        }
+    }
+
+    &.outline- {
+        &red {
+            @include outline-mixin($red);
+        }
+
+        &yellow {
+            @include outline-mixin($yellow);
+        }
+
+        &pink {
+            @include outline-mixin($pink);
+        }
+
+        &green {
+            @include outline-mixin($green);
+        }
+
+        &orange {
+            @include outline-mixin($orange);
+        }
+
+        &purple {
+            @include outline-mixin($purple);
+        }
+
+        &blue {
+            @include outline-mixin($blue);
+        }
+    }
+} */
