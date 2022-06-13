@@ -1,32 +1,114 @@
 /* root colors */
 /* https://coolors.co/8789c0-45f0df-c2cae8-8380b6-111d4a */
 :root {
+  /* primary clone */
   --primary: #0d6efd;
-  --primary-bg-hover: #0b5ed7;
-  --primary-border-hover: #0b58d6;
-  --primary-bg-active: #0a58ca;
-  --primary-border-active: #0a53be;
-  --primary-bg-focus: #0b5ed7;
-  --primary-border-focus: #0a58ca;
-  --primary-boxshadow-focus: rgb(49 132 253 / 50%);
-  --primary-rgb: 13, 109, 253;
-  --primary-hsl: 216, 98%, 52%;
-  --pending: 69, 240, 223;
-  --pendingAs: 69 240 223;
-  --outlinePending: 91, 240, 225;
-  --outlinePendingAs: 91 240 225;
-  --in_progress: 194, 202, 232;
-  --completed: 131, 128, 182;
-  --cancelled: rgb(17, 29, 74);
-  --hover-brightness: 0.85;
-  --border-hover-brightness: 0.80;
-  --border-active-brightness: 0.75;
+  --primarytext: #fff;
+  --primaryalt1: #0b5ed7;
+  --primaryalt2: #0b58d6;
+  --primaryalt3: #0a58ca;
+  --primaryalt4: #0a53be;
+  --primaryboxshadow: rgb(49 132 253 / 50%);
+  /* pending */
+  --pending: #f7ef81;
+  --pendingtext: #000;
+  --pendingalt1: #f8ef75;
+  --pendingalt2: #0b58d6;
+  --pendingalt3: #0a58ca;
+  --pendingalt4: #0a53be;
+  --pendingboxshadow: rgb(49 132 253 / 50%);
+  /* inprogress */
+  --inprogress: #cfe795;
+  --inprogresstext: #000;
+  --inprogressalt1: #c8e585;
+  --inprogressalt2: #0b58d6;
+  --inprogressalt3: #0a58ca;
+  --inprogressalt4: #0a53be;
+  --inprogressboxshadow: rgb(49 132 253 / 50%);
+  /* completed */
+  --completed: #a7d3a6;
+  --completedtext: #000;
+  --completedalt1: #98d197;
+  --completedalt2: #0b58d6;
+  --completedalt3: #0a58ca;
+  --completedalt4: #0a53be;
+  --completedboxshadow: rgb(49 132 253 / 50%);
+  /* cancelled */
+  --cancelled: #d4c685;
+  --cancelledtext: #000;
+  --cancelledalt1: #d3c278;
+  --cancelledalt2: #0b58d6;
+  --cancelledalt3: #0a58ca;
+  --cancelledalt4: #0a53be;
+  --cancelledboxshadow: rgb(49 132 253 / 50%);
 }
 
 /* Example Bootstrap button styles */
 
+/* mixins permalink: https://github.dev/twbs/bootstrap/blob/427c089961c8773386de0503a1da8b586587df38/scss/mixins/_buttons.scss  */
+/* variables permalink: https://github.dev/twbs/bootstrap/blob/7745730e4132eff204bf2afe8351511e595acee6/scss/_variables.scss#L83  */
+/* functions permalink: https://github.dev/twbs/bootstrap/blob/7745730e4132eff204bf2afe8351511e595acee6/scss/_variables.scss#L83   */
+
+/* @mixin button-variant returns
+  --#{$prefix}btn-color: #{$color};
+  --#{$prefix}btn-bg: #{$background};
+  --#{$prefix}btn-border-color: #{$border};
+  --#{$prefix}btn-hover-color: #{$hover-color};
+  --#{$prefix}btn-hover-bg: #{$hover-background};
+  --#{$prefix}btn-hover-border-color: #{$hover-border};
+  --#{$prefix}btn-focus-shadow-rgb: #{to-rgb(mix($color, $border, 15%))};
+  --#{$prefix}btn-active-color: #{$active-color};
+  --#{$prefix}btn-active-bg: #{$active-background};
+  --#{$prefix}btn-active-border-color: #{$active-border};
+  --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+  --#{$prefix}btn-disabled-color: #{$disabled-color};
+  --#{$prefix}btn-disabled-bg: #{$disabled-background};
+  --#{$prefix}btn-disabled-border-color: #{$disabled-border};
+
+// scss-docs-start btn-outline-variant-mixin
+@mixin button-outline-variantreturns
+  --#{$prefix}btn-color: #{$color};
+  --#{$prefix}btn-border-color: #{$color};
+  --#{$prefix}btn-hover-color: #{$color-hover};
+  --#{$prefix}btn-hover-bg: #{$active-background};
+  --#{$prefix}btn-hover-border-color: #{$active-border};
+  --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
+  --#{$prefix}btn-active-color: #{$active-color};
+  --#{$prefix}btn-active-bg: #{$active-background};
+  --#{$prefix}btn-active-border-color: #{$active-border};
+  --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+  --#{$prefix}btn-disabled-color: #{$color};
+  --#{$prefix}btn-disabled-bg: transparent;
+  --#{$prefix}gradient: none;
+*/
+
+.btn-pending,
+.btn-inprogress,
+.btn-completed,
+.btn-cancelled {
+  text-transform: uppercase;
+  font-size: 0.8rem !important;
+  /* as 1rem */
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* primary clone for styles comparison */
+
 .btn-primaryclone {
-  color: #fff !important;
+  color: var(--primarytext) !important;
   border-color: var(--primary) !important;
   background-color: var(--primary) !important;
 }
@@ -39,29 +121,184 @@
 
 .btn-primaryclone:hover,
 .btn-outline-primaryclone:hover {
-  color: #fff !important;
-  background-color: var(--primary-bg-hover) !important;
-  border-color: var(--primary-border-hover) !important;
+  color: var(--primarytext) !important;
+  background-color: var(--primaryalt1) !important;
+  border-color: var(--primaryalt2) !important;
 }
 
 .btn-primaryclone:focus,
-.btn-outline-primaryclone:focus {
-  background-color: var(--primary-bg-focus) !important;
-  box-shadow: 0 0 0 0.25rem var(--primary-boxshadow-focus) !important;
+.btn-outline-primaryclone:focus-visible {
+  background-color: var(--primaryalt1) !important;
+  box-shadow: 0 0 0 0.25rem var(--primaryboxshadow) !important;
+  border-color: var(--primaryalt3) !important;
 }
 
 .btn-primaryclone:not(:disabled):not(.disabled).active {
-  background-color: var(--primary-bg-active) !important;
-  border-color: var(--primary-border-active) !important;
+  background-color: var(--primaryalt3) !important;
+  border-color: var(--primaryalt4) !important;
 }
 
 .btn-outline-primaryclone:not(:disabled):not(.disabled).active {
-  color: #fff !important;
-  /* fix color when not focus-within? */
+  color: var(--primarytext) !important;
   background-color: var(--primary) !important;
   border-color: var(--primary) !important;
 }
 
+/* pending */
+
+.btn-pending {
+  color: var(--pendingtext) !important;
+  border-color: var(--pending) !important;
+  background-color: var(--pending) !important;
+}
+
+.btn-outline-pending {
+  color: var(--pending) !important;
+  border-color: var(--pending) !important;
+  background-color: inherit;
+}
+
+.btn-pending:hover,
+.btn-outline-pending:hover {
+  color: var(--pendingtext) !important;
+  background-color: var(--pendingalt1) !important;
+  border-color: var(--pendingalt2) !important;
+}
+
+.btn-pending:focus,
+.btn-outline-pending:focus-visible {
+  background-color: var(--pendingalt1) !important;
+  box-shadow: 0 0 0 0.25rem var(--pendingboxshadow) !important;
+  border-color: var(--pendingalt3) !important;
+}
+
+.btn-pending:not(:disabled):not(.disabled).active {
+  background-color: var(--pendingalt3) !important;
+  border-color: var(--pendingalt4) !important;
+}
+
+.btn-outline-pending:not(:disabled):not(.disabled).active {
+  color: var(--pendingtext) !important;
+  background-color: var(--pending) !important;
+  border-color: var(--pending) !important;
+}
+
+/* inprogress */
+
+.btn-inprogress {
+  color: var(--inprogresstext) !important;
+  border-color: var(--inprogress) !important;
+  background-color: var(--inprogress) !important;
+}
+
+.btn-outline-inprogress {
+  color: var(--inprogress) !important;
+  border-color: var(--inprogress) !important;
+  background-color: inherit;
+}
+
+.btn-inprogress:hover,
+.btn-outline-inprogress:hover {
+  color: var(--inprogresstext) !important;
+  background-color: var(--inprogressalt1) !important;
+  border-color: var(--inprogressalt2) !important;
+}
+
+.btn-inprogress:focus,
+.btn-outline-inprogress:focus-visible {
+  background-color: var(--inprogressalt1) !important;
+  box-shadow: 0 0 0 0.25rem var(--inprogressboxshadow) !important;
+  border-color: var(--inprogressalt3) !important;
+}
+
+.btn-inprogress:not(:disabled):not(.disabled).active {
+  background-color: var(--inprogressalt3) !important;
+  border-color: var(--inprogressalt4) !important;
+}
+
+.btn-outline-inprogress:not(:disabled):not(.disabled).active {
+  color: var(--inprogresstext) !important;
+  background-color: var(--inprogress) !important;
+  border-color: var(--inprogress) !important;
+}
+
+/* completed */
+
+.btn-completed {
+  color: var(--completedtext) !important;
+  border-color: var(--completed) !important;
+  background-color: var(--completed) !important;
+}
+
+.btn-outline-completed {
+  color: var(--completed) !important;
+  border-color: var(--completed) !important;
+  background-color: inherit;
+}
+
+.btn-completed:hover,
+.btn-outline-completed:hover {
+  color: var(--completedtext) !important;
+  background-color: var(--completedalt1) !important;
+  border-color: var(--completedalt2) !important;
+}
+
+.btn-completed:focus,
+.btn-outline-completed:focus-visible {
+  background-color: var(--completedalt1) !important;
+  box-shadow: 0 0 0 0.25rem var(--completedboxshadow) !important;
+  border-color: var(--completedalt3) !important;
+}
+
+.btn-completed:not(:disabled):not(.disabled).active {
+  background-color: var(--completedalt3) !important;
+  border-color: var(--completedalt4) !important;
+}
+
+.btn-outline-completed:not(:disabled):not(.disabled).active {
+  color: var(--completedtext) !important;
+  background-color: var(--completed) !important;
+  border-color: var(--completed) !important;
+}
+
+/* cancelled */
+
+.btn-cancelled {
+  color: var(--cancelledtext) !important;
+  border-color: var(--cancelled) !important;
+  background-color: var(--cancelled) !important;
+}
+
+.btn-outline-cancelled {
+  color: var(--cancelled) !important;
+  border-color: var(--cancelled) !important;
+  background-color: inherit;
+}
+
+.btn-cancelled:hover,
+.btn-outline-cancelled:hover {
+  color: var(--cancelledtext) !important;
+  background-color: var(--cancelledalt1) !important;
+  border-color: var(--cancelledalt2) !important;
+}
+
+.btn-cancelled:focus,
+.btn-outline-cancelled:focus-visible {
+  background-color: var(--cancelledalt1) !important;
+  box-shadow: 0 0 0 0.25rem var(--cancelledboxshadow) !important;
+  border-color: var(--cancelledalt3) !important;
+}
+
+.btn-cancelled:not(:disabled):not(.disabled).active {
+  background-color: var(--cancelledalt3) !important;
+  border-color: var(--cancelledalt4) !important;
+}
+
+.btn-outline-cancelled:not(:disabled):not(.disabled).active {
+  color: var(--cancelledtext) !important;
+  background-color: var(--cancelled) !important;
+  border-color: var(--cancelled) !important;
+}
 
 /* @function convert-color($hex, $fr) {
     @return rgba(red($hex), green($hex), blue($hex), $fr);

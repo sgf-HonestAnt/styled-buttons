@@ -1,6 +1,6 @@
 export type Variants =
   | "primary"
-  | "primaryclone"
+  // | "primaryclone"
   | "secondary"
   | "success"
   | "danger"
@@ -9,13 +9,13 @@ export type Variants =
   | "light"
   | "dark"
   | "pending"
-  | "in_progress"
+  | "inprogress"
   | "completed"
   | "cancelled";
 
 export type OutlineVariants =
   | "outline-primary"
-  | "outline-primaryclone"
+  // | "outline-primaryclone"
   | "outline-secondary"
   | "outline-success"
   | "outline-danger"
@@ -24,13 +24,13 @@ export type OutlineVariants =
   | "outline-light"
   | "outline-dark"
   | "outline-pending"
-  | "outline-in_progress"
+  | "outline-inprogress"
   | "outline-completed"
   | "outline-cancelled";
 
 export const variants: Variants[] = [
   "primary",
-  "primaryclone",
+  // "primaryclone",
   "secondary",
   "success",
   "danger",
@@ -39,7 +39,7 @@ export const variants: Variants[] = [
   "light",
   "dark",
   "pending",
-  "in_progress",
+  "inprogress",
   "completed",
   "cancelled",
 ];
