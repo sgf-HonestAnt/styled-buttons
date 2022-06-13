@@ -1,5 +1,6 @@
 export type Variants =
   | "primary"
+  | "primaryclone"
   | "secondary"
   | "success"
   | "danger"
@@ -14,6 +15,7 @@ export type Variants =
 
 export type OutlineVariants =
   | "outline-primary"
+  | "outline-primaryclone"
   | "outline-secondary"
   | "outline-success"
   | "outline-danger"
@@ -28,6 +30,7 @@ export type OutlineVariants =
 
 export const variants: Variants[] = [
   "primary",
+  "primaryclone",
   "secondary",
   "success",
   "danger",

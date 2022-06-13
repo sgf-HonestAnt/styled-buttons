@@ -13,7 +13,7 @@ function ButtonsExamples() {
         <Col sm={12}>Color-Styled Variants</Col>
         <Col>
           {variants.map((variant) => (
-            <Button variant={variant} className={`m-1 btn-${variant}`}>
+            <Button variant={variant} className={`m-1`}>
               {variant}
             </Button>
           ))}
@@ -21,7 +21,7 @@ function ButtonsExamples() {
         <Col sm={12}>Disabled</Col>
         <Col>
           {variants.map((variant) => (
-            <Button variant={variant} className={`m-1 btn-${variant}`} disabled>
+            <Button variant={variant} className={`m-1`} disabled>
               {variant}
             </Button>
           ))}
@@ -29,9 +29,7 @@ function ButtonsExamples() {
         <Col sm={12}>Outline</Col>
         <Col>
           {variants.map((variant) => (
-            <Button
-              variant={`outline-${variant}`}
-              className={`m-1 btn-outline-${variant}`}>
+            <Button variant={`outline-${variant}`} className={`m-1`}>
               {variant}
             </Button>
           ))}

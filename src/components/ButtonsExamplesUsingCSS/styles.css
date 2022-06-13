@@ -1,34 +1,67 @@
-/* root colors as hsl */
+/* root colors */
+/* https://coolors.co/8789c0-45f0df-c2cae8-8380b6-111d4a */
 :root {
-    --primary-h: 211;
-    --primary-s: 100%;
-    --primary-l: 50%;
-    --primary: hsl((--primary-h), (--primary-s), (--primary-l));
-
-
-    --pending: 69, 240, 223;
-    --pendingAs: 69 240 223;
-    --outlinePending: 91, 240, 225;
-    --outlinePendingAs: 91 240 225;
-    --in_progress: 194, 202, 232;
-    --completed: 131, 128, 182;
-    --cancelled: rgb(17, 29, 74);
-    --hover-brightness: 0.85;
-    --border-hover-brightness: 0.80;
-    --border-active-brightness: 0.75;
+  --primary: #0d6efd;
+  --primary-bg-hover: #0b5ed7;
+  --primary-border-hover: #0b58d6;
+  --primary-bg-active: #0a58ca;
+  --primary-border-active: #0a53be;
+  --primary-bg-focus: #0b5ed7;
+  --primary-border-focus: #0a58ca;
+  --primary-boxshadow-focus: rgb(49 132 253 / 50%);
+  --primary-rgb: 13, 109, 253;
+  --primary-hsl: 216, 98%, 52%;
+  --pending: 69, 240, 223;
+  --pendingAs: 69 240 223;
+  --outlinePending: 91, 240, 225;
+  --outlinePendingAs: 91 240 225;
+  --in_progress: 194, 202, 232;
+  --completed: 131, 128, 182;
+  --cancelled: rgb(17, 29, 74);
+  --hover-brightness: 0.85;
+  --border-hover-brightness: 0.80;
+  --border-active-brightness: 0.75;
 }
 
 /* Example Bootstrap button styles */
 
-.btn-primary {
-    border-color: var(--primary);
-    background-color: var(--primary);
+.btn-primaryclone {
+  color: #fff !important;
+  border-color: var(--primary) !important;
+  background-color: var(--primary) !important;
 }
 
-.btn-primary:hover {
-    background-color: hsla((--primary-h), (--primary-s), (--primary-l), 0.93) !important;
-    border-color: hsla((--primary-h), (--primary-s), (--primary-l), 0.89) !important;
+.btn-outline-primaryclone {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  background-color: inherit;
 }
+
+.btn-primaryclone:hover,
+.btn-outline-primaryclone:hover {
+  color: #fff !important;
+  background-color: var(--primary-bg-hover) !important;
+  border-color: var(--primary-border-hover) !important;
+}
+
+.btn-primaryclone:focus,
+.btn-outline-primaryclone:focus {
+  background-color: var(--primary-bg-focus) !important;
+  box-shadow: 0 0 0 0.25rem var(--primary-boxshadow-focus) !important;
+}
+
+.btn-primaryclone:not(:disabled):not(.disabled).active {
+  background-color: var(--primary-bg-active) !important;
+  border-color: var(--primary-border-active) !important;
+}
+
+.btn-outline-primaryclone:not(:disabled):not(.disabled).active {
+  color: #fff !important;
+  /* fix color when not focus-within? */
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
 
 /* @function convert-color($hex, $fr) {
     @return rgba(red($hex), green($hex), blue($hex), $fr);
