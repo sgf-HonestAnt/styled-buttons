@@ -1,147 +1,56 @@
 /* root colors */
-/* https://coolors.co/8789c0-45f0df-c2cae8-8380b6-111d4a */
 :root {
-  /* primary clone */
-  --primary: #0d6efd;
-  --primarytext: #fff;
-  --primaryalt1: #0b5ed7;
-  --primaryalt2: #0b58d6;
-  --primaryalt3: #0a58ca;
-  --primaryalt4: #0a53be;
-  --primaryboxshadow: rgb(49 132 253 / 50%);
-  /* pending */
-  --pending: #f7ef81;
-  --pendingtext: #000;
-  --pendingalt1: #f8ef75;
-  --pendingalt2: #0b58d6;
-  --pendingalt3: #0a58ca;
-  --pendingalt4: #0a53be;
-  --pendingboxshadow: rgb(49 132 253 / 50%);
-  /* inprogress */
-  --inprogress: #cfe795;
-  --inprogresstext: #000;
-  --inprogressalt1: #c8e585;
-  --inprogressalt2: #0b58d6;
-  --inprogressalt3: #0a58ca;
-  --inprogressalt4: #0a53be;
-  --inprogressboxshadow: rgb(49 132 253 / 50%);
-  /* completed */
-  --completed: #a7d3a6;
-  --completedtext: #000;
-  --completedalt1: #98d197;
-  --completedalt2: #0b58d6;
-  --completedalt3: #0a58ca;
-  --completedalt4: #0a53be;
-  --completedboxshadow: rgb(49 132 253 / 50%);
   /* cancelled */
-  --cancelled: #d4c685;
+  --cancelled: #c9c9c7;
   --cancelledtext: #000;
-  --cancelledalt1: #d3c278;
-  --cancelledalt2: #0b58d6;
-  --cancelledalt3: #0a58ca;
-  --cancelledalt4: #0a53be;
-  --cancelledboxshadow: rgb(49 132 253 / 50%);
+  --cancelled_HSLA: 60, 2%, 78%;
+  --cancelledalt1: hsla(var(--cancelled_HSLA), 0.95);
+  --cancelledalt2: hsla(var(--cancelled_HSLA), 0.90);
+  --cancelledalt3: hsla(var(--cancelled_HSLA), 0.85);
+  --cancelledalt4: hsla(var(--cancelled_HSLA), 0.80);
+  --cancelledboxshadow: hsla(var(--cancelled_HSLA), 0.5);
+  /* pending */
+  --pending: #c09a2f;
+  --pendingtext: #000;
+  --pending_HSLA: 44, 61%, 47%;
+  --pendingalt1: hsla(var(--pending_HSLA), 0.95);
+  --pendingalt2: hsla(var(--pending_HSLA), 0.90);
+  --pendingalt3: hsla(var(--pending_HSLA), 0.85);
+  --pendingalt4: hsla(var(--pending_HSLA), 0.80);
+  --pendingboxshadow: hsla(var(--pending_HSLA), 0.5);
+  /* inprogress */
+  --inprogress: #c14d86;
+  --inprogresstext: #fff;
+  --inprogress_HSLA: 331, 48%, 53%;
+  --inprogressalt1: hsla(var(--inprogress_HSLA), 0.95);
+  --inprogressalt2: hsla(var(--inprogress_HSLA), 0.90);
+  --inprogressalt3: hsla(var(--inprogress_HSLA), 0.85);
+  --inprogressalt4: hsla(var(--inprogress_HSLA), 0.80);
+  --inprogressboxshadow: hsla(var(--inprogress_HSLA), 0.5);
+  /* completed */
+  --completed: #959c3a;
+  --completedtext: #fff;
+  --completed_HSLA: 64, 46%, 42%;
+  --completedalt1: hsla(var(--completed_HSLA), 0.95);
+  --completedalt2: hsla(var(--completed_HSLA), 0.90);
+  --completedalt3: hsla(var(--completed_HSLA), 0.85);
+  --completedalt4: hsla(var(--completed_HSLA), 0.80);
+  --completedboxshadow: hsla(var(--completed_HSLA), 0.5);
 }
 
-/* Example Bootstrap button styles */
-
-/* mixins permalink: https://github.dev/twbs/bootstrap/blob/427c089961c8773386de0503a1da8b586587df38/scss/mixins/_buttons.scss  */
-/* variables permalink: https://github.dev/twbs/bootstrap/blob/7745730e4132eff204bf2afe8351511e595acee6/scss/_variables.scss#L83  */
-/* functions permalink: https://github.dev/twbs/bootstrap/blob/7745730e4132eff204bf2afe8351511e595acee6/scss/_variables.scss#L83   */
-
-/* @mixin button-variant returns
-  --#{$prefix}btn-color: #{$color};
-  --#{$prefix}btn-bg: #{$background};
-  --#{$prefix}btn-border-color: #{$border};
-  --#{$prefix}btn-hover-color: #{$hover-color};
-  --#{$prefix}btn-hover-bg: #{$hover-background};
-  --#{$prefix}btn-hover-border-color: #{$hover-border};
-  --#{$prefix}btn-focus-shadow-rgb: #{to-rgb(mix($color, $border, 15%))};
-  --#{$prefix}btn-active-color: #{$active-color};
-  --#{$prefix}btn-active-bg: #{$active-background};
-  --#{$prefix}btn-active-border-color: #{$active-border};
-  --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
-  --#{$prefix}btn-disabled-color: #{$disabled-color};
-  --#{$prefix}btn-disabled-bg: #{$disabled-background};
-  --#{$prefix}btn-disabled-border-color: #{$disabled-border};
-
-// scss-docs-start btn-outline-variant-mixin
-@mixin button-outline-variantreturns
-  --#{$prefix}btn-color: #{$color};
-  --#{$prefix}btn-border-color: #{$color};
-  --#{$prefix}btn-hover-color: #{$color-hover};
-  --#{$prefix}btn-hover-bg: #{$active-background};
-  --#{$prefix}btn-hover-border-color: #{$active-border};
-  --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
-  --#{$prefix}btn-active-color: #{$active-color};
-  --#{$prefix}btn-active-bg: #{$active-background};
-  --#{$prefix}btn-active-border-color: #{$active-border};
-  --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
-  --#{$prefix}btn-disabled-color: #{$color};
-  --#{$prefix}btn-disabled-bg: transparent;
-  --#{$prefix}gradient: none;
-*/
+/* global styles */
 
 .btn-pending,
+.btn-outline-pending,
 .btn-inprogress,
+.btn-outline-inprogress,
 .btn-completed,
-.btn-cancelled {
+.btn-outline-completed,
+.btn-cancelled,
+.btn-outline-cancelled {
+  border-radius: 0 !important;
   text-transform: uppercase;
-  font-size: 0.8rem !important;
-  /* as 1rem */
-  display: inline-block;
-  font-weight: 400;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-/* primary clone for styles comparison */
-
-.btn-primaryclone {
-  color: var(--primarytext) !important;
-  border-color: var(--primary) !important;
-  background-color: var(--primary) !important;
-}
-
-.btn-outline-primaryclone {
-  color: var(--primary) !important;
-  border-color: var(--primary) !important;
-  background-color: inherit;
-}
-
-.btn-primaryclone:hover,
-.btn-outline-primaryclone:hover {
-  color: var(--primarytext) !important;
-  background-color: var(--primaryalt1) !important;
-  border-color: var(--primaryalt2) !important;
-}
-
-.btn-primaryclone:focus,
-.btn-outline-primaryclone:focus-visible {
-  background-color: var(--primaryalt1) !important;
-  box-shadow: 0 0 0 0.25rem var(--primaryboxshadow) !important;
-  border-color: var(--primaryalt3) !important;
-}
-
-.btn-primaryclone:not(:disabled):not(.disabled).active {
-  background-color: var(--primaryalt3) !important;
-  border-color: var(--primaryalt4) !important;
-}
-
-.btn-outline-primaryclone:not(:disabled):not(.disabled).active {
-  color: var(--primarytext) !important;
-  background-color: var(--primary) !important;
-  border-color: var(--primary) !important;
+  font-size: 18px !important;
 }
 
 /* pending */
@@ -154,7 +63,7 @@
 
 .btn-outline-pending {
   color: var(--pending) !important;
-  border-color: var(--pending) !important;
+  border: 2px solid var(--pending) !important;
   background-color: inherit;
 }
 
@@ -166,7 +75,8 @@
 }
 
 .btn-pending:focus,
-.btn-outline-pending:focus-visible {
+.btn-outline-pending:focus {
+  color: var(--pendingtext) !important;
   background-color: var(--pendingalt1) !important;
   box-shadow: 0 0 0 0.25rem var(--pendingboxshadow) !important;
   border-color: var(--pendingalt3) !important;
@@ -193,7 +103,7 @@
 
 .btn-outline-inprogress {
   color: var(--inprogress) !important;
-  border-color: var(--inprogress) !important;
+  border: 2px solid var(--inprogress) !important;
   background-color: inherit;
 }
 
@@ -205,7 +115,8 @@
 }
 
 .btn-inprogress:focus,
-.btn-outline-inprogress:focus-visible {
+.btn-outline-inprogress:focus {
+  color: var(--inprogresstext) !important;
   background-color: var(--inprogressalt1) !important;
   box-shadow: 0 0 0 0.25rem var(--inprogressboxshadow) !important;
   border-color: var(--inprogressalt3) !important;
@@ -232,7 +143,7 @@
 
 .btn-outline-completed {
   color: var(--completed) !important;
-  border-color: var(--completed) !important;
+  border: 2px solid var(--completed) !important;
   background-color: inherit;
 }
 
@@ -244,7 +155,8 @@
 }
 
 .btn-completed:focus,
-.btn-outline-completed:focus-visible {
+.btn-outline-completed:focus {
+  color: var(--completedtext) !important;
   background-color: var(--completedalt1) !important;
   box-shadow: 0 0 0 0.25rem var(--completedboxshadow) !important;
   border-color: var(--completedalt3) !important;
@@ -271,7 +183,7 @@
 
 .btn-outline-cancelled {
   color: var(--cancelled) !important;
-  border-color: var(--cancelled) !important;
+  border: 2px solid var(--cancelled) !important;
   background-color: inherit;
 }
 
@@ -283,7 +195,8 @@
 }
 
 .btn-cancelled:focus,
-.btn-outline-cancelled:focus-visible {
+.btn-outline-cancelled:focus {
+  color: var(--cancelledtext) !important;
   background-color: var(--cancelledalt1) !important;
   box-shadow: 0 0 0 0.25rem var(--cancelledboxshadow) !important;
   border-color: var(--cancelledalt3) !important;

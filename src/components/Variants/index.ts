@@ -29,15 +29,15 @@ export type OutlineVariants =
   | "outline-cancelled";
 
 export const variants: Variants[] = [
-  "primary",
+  // "primary",
   // "primaryclone",
-  "secondary",
-  "success",
-  "danger",
-  "warning",
-  "info",
-  "light",
-  "dark",
+  // "secondary",
+  // "success",
+  // "danger",
+  // "warning",
+  // "info",
+  // "light",
+  // "dark",
   "pending",
   "inprogress",
   "completed",
